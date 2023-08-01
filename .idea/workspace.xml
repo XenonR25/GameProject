@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4d87ff5-eda4-43ce-a208-81a9ae606724" name="Changes" comment="Adding screen" />
+    <list default="true" id="d4d87ff5-eda4-43ce-a208-81a9ae606724" name="Changes" comment="adding xml" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +90,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690882819426</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adding xml">
+      <created>1690883245113</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1690883245113</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,6 +131,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit" />
     <MESSAGE value="Adding screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding screen" />
+    <MESSAGE value="adding xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding xml" />
   </component>
 </project>
