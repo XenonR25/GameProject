@@ -23,6 +23,27 @@ public class Bat
         window.repaint();
         this.window = window;
     }
+    // Method for moving bat
+    public void move()
+    {
+        // Variables for bat movement
+        int x = bat.getX();
+        int y = bat.getY();
+        int Side = window.getWidth() - batLength;
+        int batSpeed = 3;
+
+        // Moves bat left or right
+        if ((Direction == Right) && (x < Side))
+        {
+            bat.setLocation(x + batSpeed, y);
+        }
+        else if ((Direction == Left) && (x > 0))
+        {
+            bat.setLocation(x - batSpeed, y);
+        }
+    }
+
+
 
 
 
