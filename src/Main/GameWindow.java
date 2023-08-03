@@ -4,9 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 import java.awt.event.*;
 
-public class GameWindow extends JFrame implements ActionListener, KeyListener
-{
-    // Control constants.
+public class GameWindow extends JFrame implements ActionListener, KeyListener {
+
     public final static int MOVE = 0;
     public final static int RIGHT = 1;
     public final static int LEFT = 2;
@@ -74,7 +73,7 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener
     {
         int key = k.getKeyCode();
 
-        // 'J' == LEFT; 'K' == RIGHT
+
         if ( key == KeyEvent.VK_J )
         {
             driver.handleAction( LEFT );
@@ -94,6 +93,6 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener
     @Override
     public void keyTyped( KeyEvent k )
     {
-        // DOES NOTHING
+
     }
 }
