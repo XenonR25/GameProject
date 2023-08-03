@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.Timer;
 import java.awt.event.*;
 
-
 public class GameWindow extends JFrame implements ActionListener, KeyListener
 {
     // Control constants.
@@ -16,12 +15,7 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener
     private Driver driver;
     private Timer timer;
 
-    /**
-     * Creates game-play window.
-     *
-     * @param d Driver object to communicate with when keyboard and
-     *            animation-timer actions occur.
-     */
+
     public GameWindow( Driver d )
     {
         super( "Window" );
@@ -36,45 +30,30 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener
         timer = new Timer( 5, this );
     }
 
-    /**
-     * Starts the animating timer; changes the run/pause button to "Pause".
-     */
     public void startTimer()
     {
         timer.start();
     }
 
-    /**
-     * Stops the animating timer; changes the run/pause button to "Run".
-     */
+
     public void stopTimer()
     {
         timer.stop();
     }
 
-    /**
-     * Sets the background of the contained display-area.
-     */
+
     public void setBackground( java.awt.Color c )
     {
         getContentPane().setBackground( c );
     }
 
-    /**
-     * @return The y-coordinate of the bottom of the window display area.
-     *         NOTE: may be less than getHeight(), due to window insets.
-     */
+
     public int getBottomEdge()
     {
         return getHeight() - getInsets().bottom - getInsets().top;
     }
 
-    /**
-     * Sets size of window display area.
-     *
-     * @param w Width of display area.
-     * @param h Height of display area.
-     */
+
     public void setSize( int w, int h )
     {
         super.setSize( w + getInsets().left + getInsets().right,
