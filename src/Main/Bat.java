@@ -13,6 +13,17 @@ public class Bat
     private int Right = 1;
     private int Left = 2;
     private int Direction;
+    // Method for creating bat
+    public Bat ( int x, int y, GameWindow window )
+    {
+        // Bat attributes
+        bat = new Rectangle(x, y, batLength, batHeight);
+        bat.setBackground(Color.blue);
+        window.add(bat);
+        window.repaint();
+        this.window = window;
+    }
+
 
 
 }
