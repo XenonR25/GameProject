@@ -53,8 +53,18 @@ public class Bat
     {
         return batLength;
     }
+    // Method gets x-coordinate of bat
+    public int getX()
+    {
+        int x = bat.getX();
+        return x;
+    }
 
-
-
+    // Method gets y-coordinate of bat
+    public int getY()
+    {
+        int y = bat.getY();
+        return y;
+    }
 
 }
