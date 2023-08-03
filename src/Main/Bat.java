@@ -42,7 +42,17 @@ public class Bat
             bat.setLocation(x - batSpeed, y);
         }
     }
+    // Method sets direction of bat
+    public void setDirection( int dir )
+    {
+        Direction = dir;
+    }
 
+    // Method gets width of bat
+    public int getWidth()
+    {
+        return batLength;
+    }
 
 
 
