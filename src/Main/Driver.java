@@ -9,6 +9,7 @@ import javax.swing.JLabel;
         private GameWindow window;
         private JLabel bounces, speed;
 
+        private Bat bat;
         private Ball ball;
 
         public static void main(String[] args) {
@@ -18,18 +19,17 @@ import javax.swing.JLabel;
 
 
         private void makeGame() {
-            // Create window with animating timer and keyboard input response.
+
             window = new GameWindow(this);
-            window.setTitle("Bounce, bounce, bounce...");
+            window.setTitle("PONG");
             window.setLocation(50, 50);
             window.setSize(500, 500);
             window.setBackground(Color.white);
 
-            // Add ball and bat to window.S
             ball = new Ball(window.getWidth() / 2 - 10, window.getHeight() / 2 - 10, window);
+            bat  = new Bat( window.getWidth()/ 2 - 50, window.getHeight() - 50, window);
 
 
-            // add labels for speed and number of bounces
             bounces = new JLabel("Bounces: " + ball.getBounces());
             bounces.setBounds(10, 10, 150, 20);
             window.add(bounces);
@@ -39,6 +39,23 @@ import javax.swing.JLabel;
 
             window.startTimer();
             window.repaint();
+        }
+        public void handleAction( int action )
+        {
+            if ( action == GameWindow.MOVE )
+            {
+                ball.checkBatHit( bat );
+                ball.move();
+                ball.checkBatHit( bat );
+                bat.move();
+                ball.checkBatHit( bat );
+                bounces.setText( "Bounces: " + ball.getBounces() );
+                speed.setText( "Speed: " + ball.getSpeed() );
+            }
+            else
+            {
+                bat.setDirection( action );
+            }
         }
 
 

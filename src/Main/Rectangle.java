@@ -1,23 +1,22 @@
 package Main;
+
 import javax.swing.*;
 import java.awt.*;
 
-
-    public class Oval extends JComponent
+    public class Rectangle extends JComponent
     {
 
-        public Oval( int x, int y, int w, int h )
+        public Rectangle( int x, int y, int w, int h )
         {
             super();
             setBounds( x, y, w, h );
-            setBackground( Color.green );
+            setBackground( Color.black );
         }
-
 
         public void paint( Graphics g )
         {
             g.setColor( getBackground() );
-            g.fillOval( 0, 0, getWidth(), getHeight() );
+            g.fillRect( 0, 0, getWidth(), getHeight() );
             paintChildren( g );
         }
     }

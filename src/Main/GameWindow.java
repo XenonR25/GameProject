@@ -74,11 +74,11 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener {
         int key = k.getKeyCode();
 
 
-        if ( key == KeyEvent.VK_J )
+        if ( key == KeyEvent.VK_A )
         {
             driver.handleAction( LEFT );
         }
-        else if ( key == KeyEvent.VK_K )
+        else if ( key == KeyEvent.VK_D )
         {
             driver.handleAction( RIGHT );
         }
