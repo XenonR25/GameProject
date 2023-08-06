@@ -2,7 +2,10 @@ package Main;
 
 import javax.swing.JFrame;
 import javax.swing.Timer;
+import java.awt.*;
 import java.awt.event.*;
+
+import static java.awt.SystemColor.window;
 
 public class GameWindow extends JFrame implements ActionListener, KeyListener {
 
@@ -28,6 +31,8 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener {
         driver = d;
         timer = new Timer( 5, this );
     }
+
+
 
     public void startTimer()
     {

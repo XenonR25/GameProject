@@ -2,9 +2,9 @@ package Main;
 
 
 import java.awt.Color;
-import javax.swing.JLabel;
+import javax.swing.*;
 
-    public class Driver {
+public class Driver {
         // Instantiation of variables
         private GameWindow window;
         private JLabel bounces, speed;
@@ -24,7 +24,7 @@ import javax.swing.JLabel;
             window.setTitle("PONG");
             window.setLocation(50, 50);
             window.setSize(500, 500);
-            window.setBackground(Color.white);
+            window.setBackground(Color.lightGray);
 
             ball = new Ball(window.getWidth() / 2 - 10, window.getHeight() / 2 - 10, window);
             bat  = new Bat( window.getWidth()/ 2 - 50, window.getHeight() - 50, window);
@@ -34,7 +34,7 @@ import javax.swing.JLabel;
             bounces.setBounds(10, 10, 150, 20);
             window.add(bounces);
             speed = new JLabel("Speed: " + ball.getSpeed());
-            speed.setBounds(10, 30, 150, 20);
+            speed.setBounds(420, 10, 150, 20);
             window.add(speed);
 
             window.startTimer();

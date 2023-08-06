@@ -6,11 +6,11 @@ import java.awt.*;
     public class Rectangle extends JComponent
     {
 
-        public Rectangle( int x, int y, int w, int h )
+        public Rectangle(int x, int y, int w, int h )
         {
             super();
             setBounds( x, y, w, h );
-            setBackground( Color.green );
+            setBackground( Color.BLACK );
         }
 
         public void paint( Graphics g )
