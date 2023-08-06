@@ -10,7 +10,7 @@ import java.awt.*;
         {
             super();
             setBounds( x, y, w, h );
-            setBackground( Color.black );
+            setBackground( Color.green );
         }
 
         public void paint( Graphics g )
