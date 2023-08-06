@@ -26,7 +26,7 @@ public class Ball
     public Ball ( int x, int y, GameWindow window )
     {
         ball = new Oval(x, y, ballSize, ballSize);
-        ball.setBackground(Color.black);
+        ball.setBackground(Color.red);
         window.add(ball);
         window.repaint();
         this.window = window;
