@@ -69,7 +69,7 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener {
     {
         if ( e.getSource() == timer )
         {
-            driver.handleAction( MOVE );
+            //driver.handleAction( MOVE );
         }
     }
 
@@ -81,18 +81,18 @@ public class GameWindow extends JFrame implements ActionListener, KeyListener {
 
         if ( key == KeyEvent.VK_A || key == KeyEvent.VK_LEFT)
         {
-            driver.handleAction( LEFT );
+            //driver.handleAction( LEFT );
         }
         else if ( key == KeyEvent.VK_D || key == KeyEvent.VK_RIGHT)
         {
-            driver.handleAction( RIGHT );
+            //driver.handleAction( RIGHT );
         }
     }
 
     @Override
     public void keyReleased( KeyEvent k )
     {
-        driver.handleAction( STOP );
+        //driver.handleAction( STOP );
     }
 
     @Override
