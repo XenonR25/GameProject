@@ -34,7 +34,7 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
 
 
     public Driver(){
-        map= new mapGenerator(12,20);
+        map= new mapGenerator(score,12,20);
 
         addKeyListener(this);
         setFocusable(true);
@@ -50,7 +50,7 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
 
     public void paint(Graphics g){
 
-        g.setColor(Color.gray);
+        g.setColor(Color.black);
         g.fillRect(1, 1, 692, 592);
 
         map.draw((Graphics2D) g);
@@ -106,7 +106,7 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
 
 
         if(play){
-            if(new Rectangle(ballPosX, ballPosY, 20, 20).intersects(new Rectangle(playerX, 550, 280, 8))){
+            if(new Rectangle(ballPosX, ballPosY, 20,  20).intersects(new Rectangle(playerX, 550, 280, 8))){
                 score+=1;
 
 
@@ -127,8 +127,10 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
                         Rectangle brickRect= rect;
 
                         if(ballRect.intersects(brickRect)){
-                            map.setBrickValue( score);
-                            map= new mapGenerator(12,20);
+
+
+                            map= new mapGenerator(score,12,20);
+
                             if(ballPosX+19<= brickRect.x || ballPosX+1>= brickRect.x + brickRect.width){
                                 ballXdir= -ballXdir;
                             }
@@ -195,15 +197,13 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
                 playerX=280;
                 score = 0;
 
-                //  map= new mapGenerator(12,20);
+                map= new mapGenerator(score,12,20);
 
 
                 repaint();
             }
         }
     }
-
-
     public void moveright(int x ){
         play= true;
         playerX+=x;
@@ -212,7 +212,4 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
         play= true;
         playerX-=x;
     }
-
-
-
 }

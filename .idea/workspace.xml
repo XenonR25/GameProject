@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4d87ff5-eda4-43ce-a208-81a9ae606724" name="Changes" comment="added right left button to move bat">
-      <change afterPath="$PROJECT_DIR$/src/Main/mapGenerator.java" afterDir="false" />
+    <list default="true" id="d4d87ff5-eda4-43ce-a208-81a9ae606724" name="Changes" comment="great changes happen">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main/Driver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Driver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main/mapGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main/mapGenerator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +91,8 @@
       <workItem from="1691257609843" duration="322000" />
       <workItem from="1691329018674" duration="10575000" />
       <workItem from="1691347789275" duration="1719000" />
+      <workItem from="1691355598267" duration="735000" />
+      <workItem from="1691356500957" duration="968000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1690876879878</created>
@@ -130,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691331414739</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="great changes happen">
+      <option name="closed" value="true" />
+      <created>1691355932487</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1691355932487</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -170,6 +178,7 @@
     <MESSAGE value="adding xml" />
     <MESSAGE value="Adding Panel" />
     <MESSAGE value="added right left button to move bat" />
-    <option name="LAST_COMMIT_MESSAGE" value="added right left button to move bat" />
+    <MESSAGE value="great changes happen" />
+    <option name="LAST_COMMIT_MESSAGE" value="great changes happen" />
   </component>
 </project>
