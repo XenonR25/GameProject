@@ -9,18 +9,22 @@ import java.awt.event.KeyListener;
 import javax.swing.Timer;
 
 public class Driver extends JPanel implements KeyListener, ActionListener {
+
+   // private Sound sound;
+
+
     private boolean play= false;
     private int score= 0;
-    private int totalBricks= 160;
+    //final int totalBricks= 160;
 
-    private Timer timer;
+    final Timer timer;
 
-    private int delay= 8;
+    final int delay= 8;
 
     private int playerX= 280;
 
 
-    public int level =1 ;
+    //public int level =1 ;
 
     private int ballPosX= 340;
 
@@ -32,6 +36,9 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
 
     private mapGenerator map;
 
+    Sound sound = new Sound();
+    Thread gameThread;
+
 
     public Driver(){
         map= new mapGenerator(score,12,20);
@@ -40,67 +47,85 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
         setFocusable(true);
         setFocusTraversalKeysEnabled(false);
 
-        if(totalBricks==160)
+        if(true)
         {
             timer= new Timer(delay, this);
             timer.start();
         }
 
     }
+    public void setupGame(){
+        playMusic(0);
+    }
+
+    public void startGameThread(){
+        gameThread = new Thread((Runnable) this);
+        gameThread.start();
+    }
+
 
     public void paint(Graphics g){
 
-        g.setColor(Color.black);
+        g.setColor(Color.darkGray);
         g.fillRect(1, 1, 692, 592);
 
         map.draw((Graphics2D) g);
 
-        g.setColor(Color.white);
+        g.setColor(Color.ORANGE);
 
         g.fillRect(0, 0, 3, 592);
         g.fillRect(0, 0, 692, 3);
-        g.fillRect(691, 0, 3, 592);
+        g.fillRect(682, 0, 3, 592);
+        g.fillRect(0, 560, 692, 592);
 
-        g.setColor(Color.white);
-        g.setFont(new Font("serif", Font.BOLD, 25));
+        g.setColor(Color.magenta);
+        g.setFont(new Font("Dialog", Font.BOLD, 25));
         g.drawString("Score: "+score, 10, 30);
 
 
 
 
 
-        g.setColor(Color.white);
+        g.setColor(Color.CYAN);
         g.fillRect(playerX, 550, 150, 50);
 
-        g.setColor(Color.white);
-        g.fillOval(ballPosX, ballPosY, 20, 20);
+        g.setColor(Color.RED);
+        g.fillOval(ballPosX, ballPosY, 18, 18);
 
-        if(totalBricks<=0){
+        if(false){
             play= false;
             ballXdir=0;
             ballYdir=0;
             g.setColor(Color.green);
             g.setFont(new Font("serif", Font.BOLD, 30));
-            g.drawString(" Congratulation , Score: "+score, 260, 300);
+            g.drawString(" Congratulation , Score: "+score, 260, 500);
 
             g.setFont(new Font("serif", Font.BOLD, 20));
-            g.drawString("Press Enter to Restart", 230, 350);
+            g.drawString("Press Enter to Restart", 230, 470);
         }
 
         if(ballPosY>570){
             play= false;
             ballXdir=0;
             ballYdir=0;
-            g.setColor(Color.RED);
-            g.setFont(new Font("serif", Font.BOLD, 30));
-            g.drawString(" Game Over, Score: "+score, 190, 300);
+            g.setColor(Color.green);
+            g.setFont(new Font("SansSerif", Font.BOLD, 30));
+            g.drawString(" Game Over, Score: "+score, 190, 500);
 
             g.setFont(new Font("serif", Font.BOLD, 20));
-            g.drawString("Press Enter to Restart", 230, 350);
+            g.drawString("Press Enter to Restart", 230, 470);
         }
+
         g.dispose();
 
     }
+
+    public void playMusic(int i){
+        sound.setFile(i);
+        sound.play();
+        sound.loop();
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -167,7 +192,7 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
+        if(e.getKeyCode() == KeyEvent.VK_RIGHT || e.getKeyCode() == KeyEvent.VK_D){
             if(playerX>=525){
                 playerX= 525;
             }
@@ -175,7 +200,7 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
                 moveright(120);
             }
         }
-        if(e.getKeyCode() == KeyEvent.VK_LEFT){
+        if(e.getKeyCode() == KeyEvent.VK_LEFT || e.getKeyCode() == KeyEvent.VK_A){
             if(playerX<15){
                 playerX= 15;
             }
@@ -185,7 +210,7 @@ public class Driver extends JPanel implements KeyListener, ActionListener {
         }
 
 
-        if(e.getKeyCode()==KeyEvent.VK_ENTER){
+        if(e.getKeyCode()==KeyEvent.VK_ENTER || e.getKeyCode()==KeyEvent.VK_SPACE){
             if(!play){
 
 
